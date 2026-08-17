@@ -12,4 +12,4 @@ WOL公会的网站
 
 #### 我该如何访问？
 
-等一会我就会部署在 Cloudflare 上 awa
+在 cloudflare 上 https://wolwebs.pages.dev
