@@ -1,9 +1,9 @@
 fetch('/API/text.json')
-    .then(Response => {
-        if (!Response.ok) {
-            throw new Error('文件读取失败!状态码: ' + Response.status);
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('文件读取失败!状态码: ' + response.status);
         }
-        return Response.json();
+        return response.json();
     })
     .then(data => {
         document.getElementById('output').textContent = data.person;
