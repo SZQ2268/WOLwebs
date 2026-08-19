@@ -45,6 +45,7 @@
                 <h2>关于我们</h2>
                 <p>为了<a class="nones" href="https://cn.bing.com/images/search?view=detailV2&ccid=wZd4FeFE&id=96E2EEB2408201896B5626B54C5E2572DEBF900D&thid=OIP.wZd4FeFE2zFZQtKR3rTU9QAAAA&mediaurl=https://wiki.ottohub.cn/images/5/58/%E6%A3%8D%E6%AF%8D.png&q=%e6%a3%8d%e6%9c%a8&ck=5ABB165E5D1D017A7C28ACFBDDA2CC42&idpp=rc&expw=278&exph=278&form=rc2idp">滚木</a>设计的东西 ( 可访问性直接为 0 awa ) </p>
                 <p>这是一个<a href="https://www.bilibili.com/video/BV1GJ411x7h7/?share_source=copy_web&vd_source=495ac21b70d6b0156525ebf2379d5a25">链接</a></p>
+                <p>人数: <pre id="output" class="person"></pre></p>
             </div>
             <div class="we-do" id="we-do">
                 <h2>我们在做的事</h2>
@@ -75,6 +76,20 @@
             </footer>
         </div>
     </div>
-
 </body>
+<script>
+    fetch('/API/text.json')
+        .then(Response => {
+            if (!Response.ok) {
+                throw new Error('文件读取失败!状态码: ' + Response.status);
+            }
+            return Response.json();
+        })
+        .then(data => {
+            document.getElementById('output').textContent = data.person;
+        })
+        .catch(error => {
+            document.getElementById('output').textContent = '加载失败' + error.message;
+        })
+</script>
 </html>

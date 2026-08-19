@@ -96,6 +96,9 @@ a:focus-visible {
 a:visited {
   color: #3a9d5e;
 }
+.person {
+  font-size: 20px;
+}
 
 footer {
     text-align: center;
