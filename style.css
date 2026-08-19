@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 html {
-  font-family: 'Press Start 2P', monospace;
   cursor: url('pixel-cur.png'), auto;
+  font-family: system-ui;
 }
 
 .navcard .container {
